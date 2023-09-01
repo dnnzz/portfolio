@@ -7,6 +7,7 @@ export const MeteorPreview = ({ experiences }: IProps) => {
    const handlerClickLink = (website: string) => {
       window.open(website, "_blank");
    };
+   const isMobile = window.innerWidth < 768;
    return (
       <div className=" h-auto experience-section">
          {experiences.map((exp: any, i: number) => (
@@ -32,7 +33,7 @@ export const MeteorPreview = ({ experiences }: IProps) => {
                   </button>
 
                   {/* Meaty part - Meteor effect */}
-                  <Meteor number={exp.numberOfMeteors} />
+                  {!isMobile && <Meteor number={exp.numberOfMeteors} />}
                </div>
             </div>
          ))}
