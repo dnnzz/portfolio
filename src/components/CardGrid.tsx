@@ -25,7 +25,7 @@ export const CardGrid = () => {
    let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
    return (
-      <div style={{ padding: "0 7rem 0 7rem;" }}>
+      <div className="p-0 sm:p-0 md:pl-[7rem] md:pr-[7rem]">
          <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2  py-10">
             {projects.map((project, idx) => (
                <div

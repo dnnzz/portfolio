@@ -34,7 +34,7 @@ export default function Home() {
          <section id="Home">
             <MainBoxes />
          </section>
-         <section id="Experiences" className="h-[35rem]">
+         <section id="Experiences" className="sm:h-auto md:h-[35rem]">
             <h2 className="text-white text-4xl text-center">Experiences</h2>
             <MeteorPreview experiences={experiences} />
          </section>
