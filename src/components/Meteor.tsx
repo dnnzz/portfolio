@@ -2,7 +2,7 @@ import clsx from "clsx";
 import React from "react";
 
 export const Meteor = ({ number }: { number?: number }) => {
-   const meteors = new Array(number || 20).fill(true);
+   const meteors = new Array(number).fill(true);
    return (
       <>
          {meteors.map((el, idx) => (
