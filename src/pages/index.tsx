@@ -1,10 +1,10 @@
 import { MeteorPreview } from "@/components/MeteorPreview";
 import { MainBoxes } from "@/components/MainBoxes";
-// import { Navbar } from "@/components/Navbar";
+import { CardGrid } from "@/components/CardGrid";
 export default function Home() {
    const experiences = [
       {
-         company: "GTS Web Apps",
+         company: "GTSFly GmbH",
          tech: "VueJS , .Net , Asp.Net",
          workStart: "JAN 2023",
          workEnd: "Present",
@@ -27,16 +27,20 @@ export default function Home() {
          website: "https://www.paraboly.com/",
          numberOfMeteors: 3,
       },
-   ];
+   ].reverse();
    return (
       <main>
          {/* <Navbar /> */}
          <section id="Home">
             <MainBoxes />
          </section>
-         <section id="Experiences">
+         <section id="Experiences" className="h-[35rem]">
             <h2 className="text-white text-4xl text-center">Experiences</h2>
             <MeteorPreview experiences={experiences} />
+         </section>
+         <section id="SkillSet">
+            <h2 className="text-white text-4xl text-center">Skill Set</h2>
+            <CardGrid />
          </section>
       </main>
    );

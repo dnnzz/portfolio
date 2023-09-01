@@ -28,9 +28,20 @@
 body {
    color: rgb(var(--foreground-rgb));
    background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+   scroll-behavior: smooth;
 }
 .experience-section {
-   padding: 7rem 0 0 7rem;
+   padding: 7rem 0 0 0;
    display: flex;
    justify-content: space-evenly;
+   flex-wrap: wrap;
+}
+.html-logo {
+   fill: #fff; /* Initial color (Vue.js green) */
+   transition: fill 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Hover effect to change the color */
+.vue-logo:hover {
+   fill: #ff6d00; /* New color on hover */
 }
