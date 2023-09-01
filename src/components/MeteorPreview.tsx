@@ -3,11 +3,14 @@ import { Meteor } from "@/components/Meteor";
 interface IProps {
    experiences: Array<Object>;
 }
-const isMobile = window.innerWidth < 768;
 export const MeteorPreview = ({ experiences }: IProps) => {
    const handlerClickLink = (website: string) => {
       window.open(website, "_blank");
    };
+   const [isMobile, setIsMobile] = React.useState<boolean>(false);
+   React.useEffect(() => {
+      setIsMobile(window.innerWidth < 768);
+   }, []);
    return (
       <div className=" h-auto experience-section">
          {experiences.map((exp: any, i: number) => (
