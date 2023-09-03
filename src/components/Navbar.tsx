@@ -8,7 +8,7 @@ export const Navbar = () => {
    const [selectedLink, setSelectedLink] = useState("Home");
 
    return (
-      <div className="flex gap-16  z-50 absolute top-[16px]">
+      <div className="flex gap-4 sm:gap-4  md:gap-16  z-50 absolute top-[16px]">
          {navigation.map((item) => {
             const isSelected = item.name === selectedLink;
             return (
