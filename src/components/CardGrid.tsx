@@ -1,24 +1,44 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
+interface IProjects {}
 export const projects = [
    {
       title: "Common",
-      icons: ["/images/html.svg", "/images/css.svg", "/images/javascript.svg"],
+      content: [
+         { src: "/images/html.svg", name: "HTML" },
+         { src: "/images/css.svg", name: "CSS" },
+         { src: "/images/sass.svg", name: "SASS" },
+         { src: "/images/bootstrap.svg", name: "Bootstrap" },
+         { name: "Javascript", src: "/images/javascript.svg" },
+      ],
    },
    {
       title: "Front-End",
-      icons: ["/images/vue.svg", "/images/nuxt.svg", "/images/react.svg", "/images/angular.svg"],
+      content: [
+         { src: "/images/vue.svg", name: "Vue" },
+         { src: "/images/nuxt.svg", name: "Nuxt" },
+         { src: "/images/react.svg", name: "React" },
+         { src: "/images/angular.svg", name: "Angular" },
+      ],
    },
    {
       title: "Back-End",
-      icons: ["/images/nodejs.svg", "/images/csharp.svg"],
+      content: [
+         { src: "/images/nodejs.svg", name: "Nodejs" },
+         { src: "/images/csharp.svg", name: "C#" },
+      ],
    },
    {
       title: "Productivity",
-      icons: ["/images/jira.svg", "/images/tailwind.svg", "images/git.svg", "images/chatgpt.svg"],
+      content: [
+         { src: "/images/jira.svg", name: "Jira" },
+         { src: "/images/tailwind.svg", name: "Tailwind" },
+         { src: "/images/git.svg", name: "Git" },
+         { src: "/images/chatgpt.svg", name: "Chat GPT" },
+         { src: "/images/vscode.svg", name: "VsCode" },
+      ],
    },
-   // ...rest of the projects
 ];
 
 export const CardGrid = () => {
@@ -56,8 +76,11 @@ export const CardGrid = () => {
                            <h4 className="text-zinc-100 font-bold tracking-wide mt-4">{project.title}</h4>
                         </div>
                         <div className="flex" key={idx}>
-                           {project.icons.map((icon, idx) => (
-                              <Image key={idx} width={45} height={45} priority src={icon} alt="icon" />
+                           {project.content.map((ctx, idx) => (
+                              <div className="ml-4 text-center">
+                                 <Image key={idx} width={45} height={45} priority src={ctx.src} alt="icon" />
+                                 <span className="text-white">{ctx.name}</span>
+                              </div>
                            ))}
                         </div>
                      </div>
