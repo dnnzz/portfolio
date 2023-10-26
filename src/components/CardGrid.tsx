@@ -77,7 +77,7 @@ export const CardGrid = () => {
                         </div>
                         <div className="flex" key={idx}>
                            {project.content.map((ctx, idx) => (
-                              <div className="ml-4 text-center">
+                              <div key={`${idx}+div`} className="ml-4 text-center">
                                  <Image key={idx} width={45} height={45} priority src={ctx.src} alt="icon" />
                                  <span className="text-white">{ctx.name}</span>
                               </div>
