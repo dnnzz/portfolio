@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-
+import emailjs from '@emailjs/browser';
 const ContactForm: React.FC = () => {
+   const SERVICE_ID : string = 'service_amk0nhl';
+   const TEMPLATE_ID : string = 'template_n7fmong';
+   const PUBLIC_KEY : string = 'user_AQkBJRaBlrlbjjleqBNPz';
    const [formData, setFormData] = useState({
       name: "",
       email: "",
@@ -52,6 +55,12 @@ const ContactForm: React.FC = () => {
       if (valid) {
          // Submit the form or perform further actions
          console.log("Form submitted:", formData);
+         emailjs.send(SERVICE_ID , TEMPLATE_ID , formData, PUBLIC_KEY)
+         .then((result) => {
+             console.log(result.text);
+         }, (error) => {
+             console.log(error.text);
+         });
       } else {
          // Update the form errors state
          setFormErrors(errors);

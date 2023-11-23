@@ -1,8 +1,14 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
-interface IProjects {}
-export const projects = [
+interface IProjects {
+  title: string;
+  content: {
+    src: string;
+    name: string;
+  }[];
+}
+export const projects : IProjects[] = [
    {
       title: "Common",
       content: [
