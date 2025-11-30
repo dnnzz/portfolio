@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deniz Firat | Frontend Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Space Grotesk', 'sans-serif'],
+            },
+            colors: {
+              turf: {
+                400: '#34d399',
+                500: '#10b981',
+                600: '#059669',
+                900: '#064e3b',
+              },
+              odds: {
+                gold: '#fbbf24',
+                red: '#ef4444',
+                blue: '#3b82f6'
+              }
+            },
+            animation: {
+              'float-slow': 'floatY 6s ease-in-out infinite',
+              'float-medium': 'floatY 4s ease-in-out infinite',
+              'float-fast': 'floatY 3s ease-in-out infinite',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              floatY: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body { margin: 0; overflow-x: hidden; background-color: #020617; color: white; }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #0f172a; }
+      ::-webkit-scrollbar-thumb { background: #10b981; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #34d399; }
+      
+      .perspective-container {
+        perspective: 1000px;
+      }
+      .card-3d {
+        transform-style: preserve-3d;
+        transition: transform 0.1s ease;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@18.2.0",
+    "react/": "https://aistudiocdn.com/react@18.2.0/",
+    "react-dom": "https://aistudiocdn.com/react-dom@18.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@18.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
