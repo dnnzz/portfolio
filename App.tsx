@@ -17,7 +17,7 @@ function App() {
         <Animated3D />
         <div className="absolute z-10 text-center px-4">
           <h2 className="text-primary-500 font-mono tracking-widest text-sm md:text-base mb-4 animate-pulse">
-            ● LIVE ODDS UPDATING
+            ● RACE HAS BEGUN !
           </h2>
           <h1 className="text-5xl md:text-8xl font-display font-bold text-gray-900 dark:text-white mb-6 tracking-tighter drop-shadow-2xl">
             DENIZ FIRAT
