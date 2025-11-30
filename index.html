@@ -7,11 +7,24 @@
     <script>
       // Set theme before page loads to prevent flash
       (function() {
-        const savedTheme = localStorage.getItem('theme');
-        const theme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        if (theme === 'dark') {
-          document.documentElement.classList.add('dark');
-        } else {
+        try {
+          const savedTheme = localStorage.getItem('theme');
+          let theme = 'light';
+          
+          if (savedTheme === 'dark' || savedTheme === 'light') {
+            theme = savedTheme;
+          } else {
+            // Fallback to system preference
+            theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          
+          if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {
+          // If localStorage fails, default to light mode
           document.documentElement.classList.remove('dark');
         }
       })();
