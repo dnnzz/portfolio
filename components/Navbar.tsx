@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { RoughNotation } from 'react-rough-notation';
 import { SectionId } from '../types';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -28,7 +29,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 overflow-visible ${scrolled ? 'bg-[#0a0a0a]/90 backdrop-blur-md border-b border-[#1a1a1a]' : 'bg-transparent'}`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 overflow-visible ${scrolled ? 'bg-white/90 dark:bg-[#0a0a0a]/90 backdrop-blur-md border-b border-gray-200 dark:border-[#1a1a1a]' : 'bg-transparent'}`}>
       <div className={`container mx-auto px-6 flex justify-between items-center transition-all duration-300 ${scrolled ? 'h-16' : 'h-20'}`}>
         <div className="text-2xl font-display font-bold tracking-tighter cursor-pointer flex items-center h-full overflow-visible" onClick={() => scrollTo(SectionId.HERO)}>
           {showFirstName && (
@@ -39,7 +40,7 @@ const Navbar = () => {
               show={showFirstName}
               color="#d0261b"
             >
-              <span className="text-white inline-block relative z-10 pr-1">DENIZ</span>
+              <span className="text-gray-900 dark:text-white inline-block relative z-10 pr-1">DENIZ</span>
             </RoughNotation>
           )}
           <span className={`inline-block duration-1000 transition-all ${showLastName ? "w-0" : "w-4"}`}></span>
@@ -49,9 +50,9 @@ const Navbar = () => {
               iterations={20}
               animationDuration={10000}
               show={showLastName}
-              color="#334155"
+              color="#d0261b"
             >
-              <span className="text-white inline-block relative z-10">FIRAT</span>
+              <span className="text-gray-900 dark:text-white inline-block relative z-10">FIRAT</span>
             </RoughNotation>
           )}
         </div>
@@ -66,7 +67,7 @@ const Navbar = () => {
             <li key={item.id}>
               <button 
                 onClick={() => scrollTo(item.id)}
-                className="text-slate-300 hover:text-primary-500 font-medium transition-colors text-sm uppercase tracking-wider"
+                className="text-gray-700 dark:text-slate-300 hover:text-primary-500 font-medium transition-colors text-sm uppercase tracking-wider"
               >
                 {item.label}
               </button>
@@ -74,12 +75,15 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <button 
-          onClick={() => scrollTo(SectionId.CONTACT)}
-          className="bg-primary-500 hover:bg-primary-600 text-white px-5 py-2 rounded-full font-semibold transition-all shadow-[0_0_15px_rgba(208,38,27,0.3)] hover:shadow-[0_0_25px_rgba(208,38,27,0.5)] text-sm"
-        >
-          Let's Talk
-        </button>
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
+          <button 
+            onClick={() => scrollTo(SectionId.CONTACT)}
+            className="bg-primary-500 hover:bg-primary-600 text-white px-5 py-2 rounded-full font-semibold transition-all shadow-[0_0_15px_rgba(208,38,27,0.3)] hover:shadow-[0_0_25px_rgba(208,38,27,0.5)] text-sm"
+          >
+            Let's Talk
+          </button>
+        </div>
       </div>
     </nav>
   );

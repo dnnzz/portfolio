@@ -9,7 +9,7 @@ import { SectionId } from './types';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white font-sans selection:bg-primary-500 selection:text-white">
+    <div className="min-h-screen bg-gray-50 dark:bg-[#0a0a0a] text-gray-900 dark:text-white font-sans selection:bg-primary-500 selection:text-white transition-colors duration-300">
       <Navbar />
       
       {/* Hero Section */}
@@ -19,21 +19,21 @@ function App() {
           <h2 className="text-primary-500 font-mono tracking-widest text-sm md:text-base mb-4 animate-pulse">
             ● LIVE ODDS UPDATING
           </h2>
-          <h1 className="text-5xl md:text-8xl font-display font-bold text-white mb-6 tracking-tighter drop-shadow-2xl">
+          <h1 className="text-5xl md:text-8xl font-display font-bold text-gray-900 dark:text-white mb-6 tracking-tighter drop-shadow-2xl">
             DENIZ FIRAT
           </h1>
-          <p className="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
-            Specialized Frontend Developer for <span className="text-white font-semibold">Horse Racing</span> & <span className="text-primary-500 font-semibold">Online Betting</span> Industries.
+          <p className="text-xl md:text-2xl text-gray-700 dark:text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
+            Specialized Frontend Developer for <span className="text-gray-900 dark:text-white font-semibold">Horse Racing</span> & <span className="text-primary-500 font-semibold">Online Betting</span> Industries.
           </p>
           <div className="mt-10 flex flex-col md:flex-row gap-4 justify-center">
-             <button onClick={() => document.getElementById(SectionId.EXPERIENCE)?.scrollIntoView({behavior: 'smooth'})} className="px-8 py-3 rounded-full border border-slate-500 hover:border-primary-500 hover:bg-primary-500/10 text-white transition-all backdrop-blur-sm">
+             <button onClick={() => document.getElementById(SectionId.EXPERIENCE)?.scrollIntoView({behavior: 'smooth'})} className="px-8 py-3 rounded-full border border-gray-400 dark:border-slate-500 hover:border-primary-500 hover:bg-primary-500/10 text-gray-900 dark:text-white transition-all backdrop-blur-sm">
                 View Track Record
              </button>
           </div>
         </div>
         
         {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-slate-500">
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-gray-500 dark:text-slate-500">
            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
         </div>
       </div>
